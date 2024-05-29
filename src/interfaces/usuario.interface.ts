@@ -89,8 +89,14 @@ class UserAccount {
 
 // Ejemplo de uso
 const userAccount = new UserAccount();
-console.log(userAccount.createAccount('usuario1', 'password123', 'correo@example.com'));
-console.log(userAccount.createAccount('usuario2', 'password123', 'correo2@example.com'));
-console.log(userAccount.modifyUsername('usuario1', 'nuevoUsuario1')); // Nombre de usuario actualizado exitosamente
-console.log(userAccount.modifyPassword('nuevoUsuario1', 'newPassword456')); // Contraseña actualizada exitosamente
-console.log(userAccount.listUsers()); // Lista de usuarios
+console.log(userAccount.createAccount('Juan Perez', 'Ju4N,P$R3z*', 'juanperez@example.com'));
+console.log(userAccount.createAccount('Pedro López', 'p3DR,0LoPe7', 'pedrolopez@example.com'));
+console.log(userAccount.modifyUsername('Juan Piri', 'nuevoUsuario1')); // Nombre de usuario actualizado exitosamente
+console.log(userAccount.modifyPassword('nuevoUsuario1', 'Ju@NP!r!r')); // Contraseña actualizada exitosamente
+
+// Mostrar los usuarios y contraseñas
+const users = userAccount.listUsers();
+console.log("Lista de usuarios y contraseñas:");
+users.forEach(user => {
+    console.log(`Usuario: ${user.username}, Contraseña: ${user.password}`);
+});
