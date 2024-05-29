@@ -1,102 +1,73 @@
-interface User {
-    username: string;
-    password: string;
-    email: string;
+export interface Usuario {
+    id_usuario: number;
+    nombre: string;
+    carnet: number;
+    correo: string;
+    clave: string;
 }
 
-class UserAccount {
-    private users: User[] = [];
+class ClinicSystem {
+    private usuarios: Usuario[] = [];
+    private currentUsuarioId: number = 1;
 
-    public createAccount(username: string, password: string, email: string): string {
-        if (!this.isUsernameValid(username)) {
-            return "Nombre de usuario no válido";
+    public registerUsuario(usuario: Omit<Usuario, 'id_usuario'>): string {
+        if (!this.isValidUsuario(usuario)) {
+            return "Datos del usuario no válidos";
         }
 
-        if (!this.isPasswordValid(password)) {
-            return "Contraseña no válida";
-        }
-
-        if (!this.isEmailValid(email)) {
-            return "Correo electrónico no válido";
-        }
-
-        if (this.isUsernameTaken(username)) {
-            return "Nombre de usuario ya está en uso";
-        }
-
-        const newUser: User = { username, password, email };
-        this.users.push(newUser);
-        return "Cuenta creada exitosamente";
+        const newUsuario: Usuario = { ...usuario, id_usuario: this.currentUsuarioId++ };
+        this.usuarios.push(newUsuario);
+        return "Usuario registrado exitosamente";
     }
 
-    public modifyUsername(oldUsername: string, newUsername: string): string {
-        const user = this.findUserByUsername(oldUsername);
-        if (!user) {
-            return "Usuario no encontrado";
-        }
-
-        if (!this.isUsernameValid(newUsername)) {
-            return "Nombre de usuario no válido";
-        }
-
-        if (this.isUsernameTaken(newUsername)) {
-            return "Nombre de usuario ya está en uso";
-        }
-
-        user.username = newUsername;
-        return "Nombre de usuario actualizado exitosamente";
+    public listUsuarios(): Usuario[] {
+        return this.usuarios;
     }
 
-    public modifyPassword(username: string, newPassword: string): string {
-        const user = this.findUserByUsername(username);
-        if (!user) {
-            return "Usuario no encontrado";
-        }
-
-        if (!this.isPasswordValid(newPassword)) {
-            return "Contraseña no válida";
-        }
-
-        user.password = newPassword;
-        return "Contraseña actualizada exitosamente";
+    private isValidUsuario(usuario: Omit<Usuario, 'id_usuario'>): boolean {
+        return this.isNombreValid(usuario.nombre) &&
+               this.isCarnetValid(usuario.carnet) &&
+               this.isCorreoValid(usuario.correo) &&
+               this.isClaveValid(usuario.clave);
     }
 
-    public listUsers(): User[] {
-        return this.users;
+    private isNombreValid(nombre: string): boolean {
+        return nombre.length > 0;
     }
 
-    private isUsernameValid(username: string): boolean {
-        return username.length >= 3;
+    private isCarnetValid(carnet: number): boolean {
+        const carnetRegex = /^[0-9]{8}$/; // Ejemplo: un carnet con 8 dígitos
+        return carnetRegex.test(carnet.toString());
     }
 
-    private isPasswordValid(password: string): boolean {
-        return password.length >= 6;
+    private isCorreoValid(correo: string): boolean {
+        const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return correoRegex.test(correo);
     }
 
-    private isEmailValid(email: string): boolean {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    private isUsernameTaken(username: string): boolean {
-        return this.users.some(user => user.username === username);
-    }
-
-    private findUserByUsername(username: string): User | undefined {
-        return this.users.find(user => user.username === username);
+    private isClaveValid(clave: string): boolean {
+        return clave.length >= 6;
     }
 }
 
 // Ejemplo de uso
-const userAccount = new UserAccount();
-console.log(userAccount.createAccount('Juan Perez', 'Ju4N,P$R3z*', 'juanperez@example.com'));
-console.log(userAccount.createAccount('Pedro López', 'p3DR,0LoPe7', 'pedrolopez@example.com'));
-console.log(userAccount.modifyUsername('Juan Piri', 'nuevoUsuario1')); // Nombre de usuario actualizado exitosamente
-console.log(userAccount.modifyPassword('nuevoUsuario1', 'Ju@NP!r!r')); // Contraseña actualizada exitosamente
+const clinicSystem = new ClinicSystem();
+console.log(clinicSystem.registerUsuario({
+    nombre: 'Juan Perez',
+    carnet: 201912345,
+    correo: 'juanperez@example.com',
+    clave: 'Ju4N,P$R3z*'
+}));
+console.log(clinicSystem.registerUsuario({
+    nombre: 'Pedro López',
+    carnet: 201922222,
+    correo: 'pedrolopez@example.com',
+    clave: 'p3DR,0LoPe7'
+}));
 
-// Mostrar los usuarios y contraseñas
-const users = userAccount.listUsers();
-console.log("Lista de usuarios y contraseñas:");
-users.forEach(user => {
-    console.log(`Usuario: ${user.username}, Contraseña: ${user.password}`);
+// Mostrar los usuarios registrados
+const usuarios = clinicSystem.listUsuarios();
+console.log("Lista de usuarios registrados:");
+usuarios.forEach(usuario => {
+    console.log(`ID: ${usuario.id_usuario}, Nombre: ${usuario.nombre}, Carnet: ${usuario.carnet}, Correo: ${usuario.correo}, Clave: ${usuario.clave}`);
 });
