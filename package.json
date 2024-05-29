@@ -1,7 +1,9 @@
 {
     "scripts": {
-        "dev": "nodemon src/index.ts"
-      },
+        "build": "tsc",
+        "start": "node build/src/index",
+        "dev": "nodemon"
+    },
     "devDependencies": {
         "nodemon": "^3.1.1",
         "ts-node": "^10.9.2"

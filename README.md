@@ -14,19 +14,19 @@ Recuerden que todos los datos se deben persistir en archivos .json, utilizando e
 
 ### Requisitos:
 
-- **Autenticación de usuarios:** 🔐 El sistema debe permitir la creación de cuentas de usuario para el personal de la clínica para acceder a las funciones específicas del sistema.
+- **Autenticación de usuarios:** 🔐 El sistema debe permitir la creación de cuentas de usuario para el personal de la clínica para acceder a las funciones específicas del sistema. (Moisés)
 
-- **Registro de pacientes:** 📋 El personal de la clínica debe poder registrar pacientes en el sistema, incluyendo información personal como nombre, fecha de nacimiento, dirección, número de teléfono, así como datos médicos relevantes como alergias, medicamentos actuales y condiciones médicas preexistentes.
+- **Registro de pacientes:** 📋 El personal de la clínica debe poder registrar pacientes en el sistema, incluyendo información personal como nombre, fecha de nacimiento, dirección, número de teléfono, así como datos médicos relevantes como alergias, medicamentos actuales y condiciones médicas preexistentes. (Moisés)
 
-- **Programación de citas:** 🗓️ El personal de la clínica debe poder programar y gestionar citas para servicios dentales, asignando pacientes y doctores a cada cita.
+- **Programación de citas:** 🗓️ El personal de la clínica debe poder programar y gestionar citas para servicios dentales, asignando pacientes y doctores a cada cita. (Moisés)
 
-- **Gestión de doctores y horarios:** ⏰ Los administradores de la clínica deben poder gestionar los horarios de los doctores, asignando horarios de trabajo disponibles.
+- **Gestión de doctores y horarios:** ⏰ Los administradores de la clínica deben poder gestionar los horarios de los doctores, asignando horarios de trabajo disponibles. (Lourdes.)
 
-- **Registro de recetas:** 💊 Los doctores deben poder generar recetas médicas para medicamentos y tratamientos dentales, especificando la dosis, frecuencia y duración del tratamiento, y adjuntándolas al historial médico del paciente.
+- **Registro de recetas:** 💊 Los doctores deben poder generar recetas médicas para medicamentos y tratamientos dentales, especificando la dosis, frecuencia y duración del tratamiento, y adjuntándolas al historial médico del paciente. (Lourdes.)
 
-- **Administración de productos y servicios:** 💼 El sistema debe mantener un catálogo de productos y servicios dentales, incluyendo servicios como limpiezas, empastes, extracciones, tratamientos de conducto, ortodoncia, blanqueamiento dental, entre otros.
+- **Administración de productos y servicios:** 💼 El sistema debe mantener un catálogo de productos y servicios dentales, incluyendo servicios como limpiezas, empastes, extracciones, tratamientos de conducto, ortodoncia, blanqueamiento dental, entre otros. (Wesley)
 
-- **Facturación de servicios prestados:** 💵 Después de cada cita, el sistema debe generar una factura que muestre un resumen de los servicios consumidos (incluyendo procedimientos realizados y productos utilizados) y los honorarios correspondientes a la cita. Esta factura debe ser almacenada en el sistema para futuras referencias.
+- **Facturación de servicios prestados:** 💵 Después de cada cita, el sistema debe generar una factura que muestre un resumen de los servicios consumidos (incluyendo procedimientos realizados y productos utilizados) y los honorarios correspondientes a la cita. Esta factura debe ser almacenada en el sistema para futuras referencias. (Wesley)
 
 
 ## ¡Buena suerte y éxito en su proyecto! 🍀🚀
