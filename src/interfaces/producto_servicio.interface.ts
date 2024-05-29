@@ -3,5 +3,5 @@ export interface ProductoServicio {
     tipo: 'Servicio' | ' Producto'
     nombre: string
     precio: number
-}
+} console.log ("Hola")
 
