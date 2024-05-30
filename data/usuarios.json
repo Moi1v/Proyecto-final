@@ -12,5 +12,12 @@
         "carnet": 201922222,
         "correo": "pedrolopez@example.com",
         "clave": "p3DR,0LoPe7"
+    },
+    {
+        "id_usuario": 3,
+        "nombre" : "Luis Romario",
+        "carnet" : 230045999,
+        "correo" : "lromario@example.com",
+        "clave": "Lu!sR0m@r!0"
     }
 ]

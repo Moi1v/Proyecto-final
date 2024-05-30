@@ -1,3 +1,14 @@
+import { readFileSync } from 'fs'
+
+const Ususariospredeterminados = () => {
+
+    const Listausuarios:string = readFileSync('./../data/usuarios.json', 'utf8')
+    console.log(Listausuarios)
+}
+export {Ususariospredeterminados}
+
+
+
 export interface Usuario {
     id_usuario: number;
     nombre: string;
@@ -5,6 +16,7 @@ export interface Usuario {
     correo: string;
     clave: string;
 }
+
 
 class ValidadorUsuario {
     public esUsuarioValido(usuario: Usuario): boolean {
@@ -101,9 +113,9 @@ const usuario: Usuario = {
     nombre: 'Juan Perez',
     carnet: 201912345,
     correo: 'juanperez@example.com',
-    clave: 'Ju4N,P$R3z*'
+    clave: 'Ju4N,P$R3z'
 };
 
-console.log(validador.esUsuarioValido(usuario));
 
 export {validador, usuario}
+
