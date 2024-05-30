@@ -5,3 +5,5 @@ import { Ususariospredeterminados } from "./interfaces/usuario.interface";
 
 console.log(Ususariospredeterminados)
 console.log(validador.esUsuarioValido(usuario));
+
+console.log("Hola")
