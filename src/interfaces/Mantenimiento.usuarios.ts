@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs'
-import {  Crearusuario, Usuario  } from './usuario.interface'
+import {  Actualizarusuario, Crearusuario, Usuario  } from './usuario.interface'
 
 const direccionArchivo = './src/data/productos.json'
 
@@ -15,7 +15,5 @@ const crearUsuario = (crearUsuario: Crearusuario) => {
     Usuariosactuales.push(crearUsuario as Usuario)
     writeFileSync('./data/usuarios.json', JSON.stringify(Usuariosactuales))
 }
-
-
 
 export { LecturaUsuarios, crearUsuario }

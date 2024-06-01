@@ -12,3 +12,8 @@
         correo: string;
         clave: string;
     }
+    export interface Actualizarusuario {
+        nombre?: string
+        correo?: number
+        clave?: number
+    }
