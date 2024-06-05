@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'fs'
 import {  Actualizarusuario, Crearusuario, Usuario  } from './usuario.interface'
 
-const direccionArchivo = './src/data/productos.json'
+const direccionArchivo = './src/data/usuarios.json'
 
 const LecturaUsuarios = (): Usuario[] => {
     const archivo: string = readFileSync('./data/usuarios.json', 'utf8')

@@ -2,5 +2,5 @@ import { LecturaUsuarios, crearUsuario, Eliminar } from "./interfaces/Mantenimie
 
 
 
-crearUsuario({id_usuario: 4 , nombre: 'Pedro Hernandez', carnet: 44009, correo: 'Pedroh@hotmail.com', clave: 'P3dr0H3Rn@nd3z' })
+crearUsuario({id_usuario: 5 ,  nombre: 'Pablo Martinez', carnet: 2400089, correo: 'Pablom@hotmail.com', clave: 'P@bl0M@rt¡n3z' })
 // Eliminar(4)

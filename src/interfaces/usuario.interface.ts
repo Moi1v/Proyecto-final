@@ -6,7 +6,7 @@
         clave: string;
     }
     export interface Crearusuario {
-        id_usuario?: number;
+        id_usuario: number;
         nombre: string;
         carnet: number;
         correo: string;
