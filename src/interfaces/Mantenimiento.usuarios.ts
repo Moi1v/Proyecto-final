@@ -11,7 +11,7 @@ const LecturaUsuarios = (): Usuario[] => {
 
 const crearUsuario = (crearUsuario: Crearusuario) => {
     const Usuariosactuales = LecturaUsuarios()
-    crearUsuario.id_usuario = 3 // Agregar lógica para deteminar el siguiente ID
+    crearUsuario.id_usuario = crearUsuario.id_usuario // Agregar lógica para deteminar el siguiente ID
     Usuariosactuales.push(crearUsuario as Usuario)
     writeFileSync('./data/usuarios.json', JSON.stringify(Usuariosactuales))
 }
