@@ -16,4 +16,22 @@ const crearUsuario = (crearUsuario: Crearusuario) => {
     writeFileSync('./data/usuarios.json', JSON.stringify(Usuariosactuales))
 }
 
-export { LecturaUsuarios, crearUsuario }
+const Eliminar = (id_usuario: number) => {
+    const Usuariosactuales = LecturaUsuarios()
+    const UsuariosFinales = Usuariosactuales.filter((nombre) => nombre.id_usuario !== id_usuario)
+    writeFileSync(direccionArchivo, JSON.stringify(UsuariosFinales))
+}
+
+const Actualizarusuario = (id_usuario: number, actualizarUsuario: Actualizarusuario) => {
+    const Usuariosactuales = LecturaUsuarios()
+    const UsuarioAActualizar = Usuariosactuales.filter((nombre) => nombre.id_usuario === id_usuario)[0]
+    if (actualizarUsuario.nombre) actualizarUsuario.nombre = actualizarUsuario.nombre
+    if (actualizarUsuario.clave) actualizarUsuario.clave = actualizarUsuario.clave
+    Eliminar(id_usuario)
+    const UsuariosFinales = LecturaUsuarios()
+    UsuariosFinales.push(UsuarioAActualizar)
+    writeFileSync(direccionArchivo, JSON.stringify(UsuariosFinales))
+}
+
+
+export { LecturaUsuarios, crearUsuario, Eliminar }
