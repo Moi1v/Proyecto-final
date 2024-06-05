@@ -1,6 +1,8 @@
 import { readFileSync, writeFileSync } from 'fs'
 import { Actualizarusuario, Usuario, Crearusuario } from '../interfaces/usuario.interface'
 
+
+
 const direccionArchivo = './src/data/usuarios.json'
 
 const LecturaUsuarios = (): Usuario[] => {
@@ -35,3 +37,5 @@ const Actualizarusuario = (id_usuario: number, actualizarUsuario: Actualizarusua
 
 
 export { LecturaUsuarios, crearUsuario, Eliminar }
+
+
