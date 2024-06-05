@@ -6,3 +6,4 @@ export interface Doctor {
     especialidad: 'Odontología' | 'Cirujano Oral'
     horario: Horario
 }
+
