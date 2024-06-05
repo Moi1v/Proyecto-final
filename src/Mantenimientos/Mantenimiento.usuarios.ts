@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs'
-import {  Actualizarusuario, Crearusuario, Usuario  } from './usuario.interface'
+import { Actualizarusuario, Usuario, Crearusuario } from '../interfaces/usuario.interface'
 
 const direccionArchivo = './src/data/usuarios.json'
 
