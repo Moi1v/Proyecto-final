@@ -33,4 +33,4 @@ const ActualizarRegistro = (id_paciente: number, Actualizarregistro: ActualizarR
     writeFileSync(DirreccionArch, JSON.stringify(PacientesFinales))
 }
 
-export { CrearRegistro }
+export { CrearRegistro, EliminarPaciente}
