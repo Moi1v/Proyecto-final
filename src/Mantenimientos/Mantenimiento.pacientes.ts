@@ -16,11 +16,18 @@ const CrearRegistro = (crearRegistro: CrearRegistro) => {
     writeFileSync('./data/pacientes.json', JSON.stringify(PacintesActuales))
 }
 
+const EliminarPaciente = (id_paciente: number) => {
+    const PacientesActuales = LecturaPacientes()
+    const PacientesFinales = PacientesActuales.filter((nombre) => nombre.id_paciente !== id_paciente)
+    writeFileSync(DirreccionArch, JSON.stringify(PacientesFinales))
+}
+
 const ActualizarRegistro = (id_paciente: number, Actualizarregistro: ActualizarRegistro) => {
     const PacintesActuales = LecturaPacientes()
     const PacienteAActualizar = PacintesActuales.filter((nombre) => nombre.id_paciente === id_paciente)[0]
     if (Actualizarregistro.nombre) Actualizarregistro.nombre = Actualizarregistro.nombre
     if (Actualizarregistro.telefono) Actualizarregistro.telefono = Actualizarregistro.telefono
+    EliminarPaciente(id_paciente)
     const PacientesFinales = LecturaPacientes()
     PacientesFinales.push(PacienteAActualizar)
     writeFileSync(DirreccionArch, JSON.stringify(PacientesFinales))
