@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs'
-import { Doctor, GestionDoctores } from '../interfaces/doctor.interface' 
+import { ActualizarDoctores, Doctor, GestionDoctores } from '../interfaces/doctor.interface' 
 
 
 
@@ -19,23 +19,23 @@ const Gestiondoctores = (gestionarhorarios: GestionDoctores) => {
 }
 
 const EliminarDoctores = (id_doctor: number) => {
+    const DoctoresActuales = LecturaDoctores()
+    const DoctoresFinales = DoctoresActuales.filter((nombre) => nombre.id_doctor !== id_doctor)
+    writeFileSync(DIreccionArchivo, JSON.stringify(DoctoresFinales))
+}
+
+const actualizardoctores = (id_doctor: number, actualizarDoctores: ActualizarDoctores) => {
+    const DoctoresActuales = LecturaDoctores()
+    const DoctorAActualizar = DoctoresActuales.filter((nombre) => nombre.id_doctor === id_doctor)[0]
+    if (actualizarDoctores.nombre) actualizarDoctores.nombre = actualizarDoctores.nombre
+    if (actualizarDoctores.id_doctor) actualizarDoctores.id_doctor = actualizarDoctores.id_doctor
+    EliminarDoctores(id_doctor)
     const DoctoresFinales = LecturaDoctores()
-    const UsuariosFinales = DoctoresFinales.filter((nombre) => nombre.id_usuario !== id_usuario)
-    writeFileSync(direccionArchivo, JSON.stringify(UsuariosFinales))
-}
-
-const actualizarusuario = (id_usuario: number, actualizarUsuario: Actualizarusuario) => {
-    const DoctoresFinales = LecturaUsuarios()
-    const UsuarioAActualizar = DoctoresFinales.filter((nombre) => nombre.id_usuario === id_usuario)[0]
-    if (actualizarUsuario.nombre) actualizarUsuario.nombre = actualizarUsuario.nombre
-    if (actualizarUsuario.clave) actualizarUsuario.clave = actualizarUsuario.clave
-    Eliminar(id_usuario)
-    const UsuariosFinales = LecturaUsuarios()
-    UsuariosFinales.push(UsuarioAActualizar)
-    writeFileSync(direccionArchivo, JSON.stringify(UsuariosFinales))
+    DoctoresFinales.push(DoctorAActualizar)
+    writeFileSync(DIreccionArchivo, JSON.stringify(DoctoresFinales))
 }
 
 
-export { LecturaUsuarios, gestionarhorarios, Eliminar }
+export {Gestiondoctores, EliminarDoctores }
 
 

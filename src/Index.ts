@@ -21,11 +21,6 @@ import { Gestiondoctores, EliminarDoctores } from "./Mantenimientos/Mantenimient
 // CrearCIta({ nombre: 'Paolo Martinez',  id_paciente: 1, id_doctor: 1 })
 
 // Esta funcion nos sirve para una gestion sobre los doctores
-Gestiondoctores({ id_doctor: 1,
-                  nombre: "María García",
-                  especialidad: "Odontología",
-                  horario: [
-            { "dia": "Lunes", "hora_inicio": "08:00:00", "hora_fin": "12:00:00" },
-            { "dia": "Miércoles", "hora_inicio": "14:00:00", "hora_fin": "18:00:00" },
-            { "dia": "Viernes", "hora_inicio": "10:00:00", "hora_fin": "14:00:00" }
-        ]})
+// Gestiondoctores({ id_doctor: 1,
+//                   nombre: "María García",
+//                   especialidad: "Odontología"})
