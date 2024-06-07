@@ -4,7 +4,7 @@
         "target": "es6",
         "lib": ["es6", "ES2021", "DOM"],
         "sourceMap": true,
-        "outDir": "./build/src",
+        "outDir": "./build/src/index",
         "strict": true,
         "moduleResolution": "node",
         "experimentalDecorators": true,

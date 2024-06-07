@@ -1,6 +1,9 @@
 import { CrearCIta } from "./Mantenimientos/Mantenimiento.Programacion.de.citas";
 import { CrearRegistro, EliminarPaciente } from "./Mantenimientos/Mantenimiento.pacientes";
 import { crearUsuario, Eliminar} from "./Mantenimientos/Mantenimiento.usuarios";
+import { Gestiondoctores, EliminarDoctores } from "./Mantenimientos/MantenimientoGestionDocs";
+
+
 
 // Esta funcion nos sirve para crear un usuario nuevo.
 // crearUsuario({id_usuario: 3,  nombre: 'Paolo Martinez', carnet: 2400088, correo: 'Paolom@hotmail.com', clave: 'P@ol0M@rt¡n3z' })
@@ -16,3 +19,13 @@ import { crearUsuario, Eliminar} from "./Mantenimientos/Mantenimiento.usuarios";
 
 // Esta funcion nos sirve para crear una cita nueva
 // CrearCIta({ nombre: 'Paolo Martinez',  id_paciente: 1, id_doctor: 1 })
+
+// Esta funcion nos sirve para una gestion sobre los doctores
+Gestiondoctores({ id_doctor: 1,
+                  nombre: "María García",
+                  especialidad: "Odontología",
+                  horario: [
+            { "dia": "Lunes", "hora_inicio": "08:00:00", "hora_fin": "12:00:00" },
+            { "dia": "Miércoles", "hora_inicio": "14:00:00", "hora_fin": "18:00:00" },
+            { "dia": "Viernes", "hora_inicio": "10:00:00", "hora_fin": "14:00:00" }
+        ]})
