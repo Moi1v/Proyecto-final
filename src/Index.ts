@@ -1,10 +1,9 @@
+import { CrearCIta } from "./Mantenimientos/Mantenimiento.Programacion.de.citas";
 import { CrearRegistro, EliminarPaciente } from "./Mantenimientos/Mantenimiento.pacientes";
 import { crearUsuario, Eliminar} from "./Mantenimientos/Mantenimiento.usuarios";
 
-
 // Esta funcion nos sirve para crear un usuario nuevo.
-
-// crearUsuario({id_usuario: 4 ,  nombre: 'Paolo Martinez', carnet: 2400088, correo: 'Paolom@hotmail.com', clave: 'P@ol0M@rt¡n3z' })
+// crearUsuario({id_usuario: 3,  nombre: 'Paolo Martinez', carnet: 2400088, correo: 'Paolom@hotmail.com', clave: 'P@ol0M@rt¡n3z' })
 
 // Esta otra funcion nos sirve para Eliminar un usuario nuevo o no deseado
 // Eliminar(4)
@@ -15,3 +14,5 @@ import { crearUsuario, Eliminar} from "./Mantenimientos/Mantenimiento.usuarios";
 // Esta funcion nos ayuda a eliminar un registro de un paciente
 // EliminarPaciente(3)
 
+// Esta funcion nos sirve para crear una cita nueva
+// CrearCIta({ nombre: 'Paolo Martinez',  id_paciente: 1, id_doctor: 1 })

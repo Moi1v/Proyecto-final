@@ -11,7 +11,7 @@ const LecturaPacientes = (): Paciente[] => {
 
 const CrearRegistro = (crearRegistro: CrearRegistro) => {
     const PacintesActuales = LecturaPacientes()
-    crearRegistro.id_paciente = crearRegistro.id_paciente // Agregar lógica para deteminar el siguiente ID
+    crearRegistro.id_paciente = crearRegistro.id_paciente 
     PacintesActuales.push(crearRegistro as Paciente)
     writeFileSync('./data/pacientes.json', JSON.stringify(PacintesActuales))
 }
