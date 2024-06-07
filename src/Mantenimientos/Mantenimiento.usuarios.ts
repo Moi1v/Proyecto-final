@@ -24,7 +24,7 @@ const Eliminar = (id_usuario: number) => {
     writeFileSync(direccionArchivo, JSON.stringify(UsuariosFinales))
 }
 
-const Actualizarusuario = (id_usuario: number, actualizarUsuario: Actualizarusuario) => {
+const actualizarusuario = (id_usuario: number, actualizarUsuario: Actualizarusuario) => {
     const Usuariosactuales = LecturaUsuarios()
     const UsuarioAActualizar = Usuariosactuales.filter((nombre) => nombre.id_usuario === id_usuario)[0]
     if (actualizarUsuario.nombre) actualizarUsuario.nombre = actualizarUsuario.nombre
