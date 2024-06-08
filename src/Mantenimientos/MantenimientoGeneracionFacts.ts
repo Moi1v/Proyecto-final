@@ -3,14 +3,14 @@ import { Factura } from '../interfaces/factura.interface'
 
 
 
-const generarYAlmacenarFactura = (factura: Factura) => {
+function generarYAlmacenarFactura(factura: Factura) {
     console.log("Factura Generada:");
     console.log(factura);
 
     const facturaJSON = JSON.stringify(factura);
 
     writeFileSync('./src/data/facturas.json', facturaJSON);
-};
+}
 
 const finalizarCita = (idFactura: number, idPaciente: number, idDoctor: number, serviciosConsumidos: number[], total: number) => {
     const fechaHora = new Date();
