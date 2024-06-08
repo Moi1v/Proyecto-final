@@ -2,8 +2,8 @@ import { readFileSync, writeFileSync } from 'fs'
 import { ActualizarDoctores, Doctor, GestionDoctores } from '../interfaces/doctor.interface' 
 
 
-
 const DIreccionArchivo = './src/data/doctores.json'
+
 
 const LecturaDoctores = (): Doctor[] => {
     const archivo: string = readFileSync('./data/doctores.json', 'utf8')
@@ -11,31 +11,29 @@ const LecturaDoctores = (): Doctor[] => {
     return JSON.parse(archivo) as Doctor[]
 }
 
-const Gestiondoctores = (gestionarhorarios: GestionDoctores) => {
-    const Usuariosactuales = LecturaDoctores()
-    gestionarhorarios.id_doctor = gestionarhorarios.id_doctor // Agregar lógica para deteminar el siguiente ID
-    Usuariosactuales.push(gestionarhorarios as Doctor)
-    writeFileSync('./data/doctores.json', JSON.stringify(Usuariosactuales))
-}
-
-const EliminarDoctores = (id_doctor: number) => {
+const crearGestionDeDoctor = (creargestiondedoctor: GestionDoctores) => {
     const DoctoresActuales = LecturaDoctores()
-    const DoctoresFinales = DoctoresActuales.filter((nombre) => nombre.id_doctor !== id_doctor)
-    writeFileSync(DIreccionArchivo, JSON.stringify(DoctoresFinales))
+    creargestiondedoctor.id_doctor = creargestiondedoctor.id_doctor // Agregar lógica para deteminar el siguiente ID
+    DoctoresActuales.push(creargestiondedoctor as Doctor)
+    writeFileSync('./data/doctores.json', JSON.stringify(DoctoresActuales))
 }
 
-const actualizardoctores = (id_doctor: number, actualizarDoctores: ActualizarDoctores) => {
+const EliminarGestionDeDoctores = (id_doctor: number) => {
     const DoctoresActuales = LecturaDoctores()
-    const DoctorAActualizar = DoctoresActuales.filter((nombre) => nombre.id_doctor === id_doctor)[0]
-    if (actualizarDoctores.nombre) actualizarDoctores.nombre = actualizarDoctores.nombre
-    if (actualizarDoctores.id_doctor) actualizarDoctores.id_doctor = actualizarDoctores.id_doctor
-    EliminarDoctores(id_doctor)
-    const DoctoresFinales = LecturaDoctores()
-    DoctoresFinales.push(DoctorAActualizar)
-    writeFileSync(DIreccionArchivo, JSON.stringify(DoctoresFinales))
+    const UsuariosFinales = DoctoresActuales.filter((nombre) => nombre.id_doctor !== id_doctor)
+    writeFileSync(DIreccionArchivo, JSON.stringify(UsuariosFinales))
+}
+
+const actualizargestionDoctores = (id_doctor: number, actualizarGestiondoctores: ActualizarDoctores) => {
+    const DoctoresActuales = LecturaDoctores()
+    const UsuarioAActualizar = DoctoresActuales.filter((nombre) => nombre.id_doctor === id_doctor)[0]
+    if (actualizarGestiondoctores.nombres) actualizarGestiondoctores.nombres = actualizarGestiondoctores.nombres
+    if (actualizarGestiondoctores.id_doctor) actualizarGestiondoctores.id_doctor = actualizarGestiondoctores.id_doctor
+    EliminarGestionDeDoctores(id_doctor)
+    const UsuariosFinales = LecturaDoctores()
+    UsuariosFinales.push(UsuarioAActualizar)
+    writeFileSync(DIreccionArchivo, JSON.stringify(UsuariosFinales))
 }
 
 
-export {Gestiondoctores, EliminarDoctores }
-
-
+export { LecturaDoctores, crearGestionDeDoctor, EliminarGestionDeDoctores }

@@ -6,7 +6,7 @@ import { Gestiondoctores, EliminarDoctores } from "./Mantenimientos/Mantenimient
 
 
 // Esta funcion nos sirve para crear un usuario nuevo.
-// crearUsuario({id_usuario: 3,  nombre: 'Paolo Martinez', carnet: 2400088, correo: 'Paolom@hotmail.com', clave: 'P@ol0M@rt¡n3z' })
+crearUsuario({id_usuario: 4,  nombre: 'Lou', carnet: 2400099, correo: 'Lo@hotmail.com', clave: 'Lu@ol0M@rt¡n3z' })
 
 // Esta otra funcion nos sirve para Eliminar un usuario nuevo o no deseado
 // Eliminar(4)
