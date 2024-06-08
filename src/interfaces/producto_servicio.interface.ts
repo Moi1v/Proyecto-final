@@ -3,7 +3,7 @@ export interface ProductoServicio {
     tipo: 'Servicio' | ' Producto'
     nombre: string
     precio: number
-}
+} console.log ("Hola")
 
 export interface CrearProducto{
     id_producto_servicio: number
