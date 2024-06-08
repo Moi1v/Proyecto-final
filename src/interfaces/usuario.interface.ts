@@ -4,6 +4,7 @@
         carnet: number;
         correo: string;
         clave: string;
+        activo: true
     }
     export interface Crearusuario {
         id_usuario: number;

@@ -1,6 +1,6 @@
 import { CrearCIta } from "./Mantenimientos/Mantenimiento.Programacion.de.citas";
-import { CrearRegistro, EliminarPaciente } from "./Mantenimientos/Mantenimiento.pacientes";
-import { crearUsuario } from "./Mantenimientos/Mantenimiento.usuarios";
+import { CrearRegistro, eliminarPaciente, editarPaciente } from "./Mantenimientos/Mantenimiento.pacientes";
+import { crearUsuario, autenticarUsuario } from "./Mantenimientos/Mantenimiento.usuarios";
 import { crearGestionDeDoctor, EliminarGestionDeDoctores } from "./Mantenimientos/MantenimientoGestionDocs";
 import { crearReceta, EliminarRecetas } from "./Mantenimientos/MantenimientoRegistroDeRecetas";
 import { crearproducto, Eliminarproducto } from "./Mantenimientos/Mantenimientoproductosyservicios";
@@ -30,3 +30,4 @@ import { crearproducto, Eliminarproducto } from "./Mantenimientos/Mantenimientop
 // Esta funcion nos sirve para una creacion de receta
 // crearReceta({ id_paciente: 1, id_doctor: 1, medicamentos: [{ nombre: "Ibuprofeno", dosis: "400mg", frecuencia_horas: 8, duracion_dias: 3}]})
 
+autenticarUsuario("Moises", "Moi1v")
