@@ -1,1 +1,26 @@
-console.log("Holaa")
+import { CrearCIta } from "./Mantenimientos/Mantenimiento.Programacion.de.citas";
+import { CrearRegistro, EliminarPaciente } from "./Mantenimientos/Mantenimiento.pacientes";
+import { crearUsuario, Eliminar} from "./Mantenimientos/Mantenimiento.usuarios";
+import { Gestiondoctores, EliminarDoctores } from "./Mantenimientos/MantenimientoGestionDocs";
+
+
+
+// Esta funcion nos sirve para crear un usuario nuevo.
+crearUsuario({id_usuario: 4,  nombre: 'Lou', carnet: 2400099, correo: 'Lo@hotmail.com', clave: 'Lu@ol0M@rt¡n3z' })
+
+// Esta otra funcion nos sirve para Eliminar un usuario nuevo o no deseado
+// Eliminar(4)
+
+// Esta funcion nos sirve para crear un registro medico del Paciente.
+// CrearRegistro({id_paciente:3, nombre:"Paolo Martinez", direccion :"Ciudad de Guatemala", telefono:90908760, alergias:["Neumonia"],medicamentos_actuales:["Aspirina, Acetamonofen, Hibuprofeno"],condiciones_medicas :["Diabetes, Taquicardia"]})
+
+// Esta funcion nos ayuda a eliminar un registro de un paciente
+// EliminarPaciente(3)
+
+// Esta funcion nos sirve para crear una cita nueva
+// CrearCIta({ nombre: 'Paolo Martinez',  id_paciente: 1, id_doctor: 1 })
+
+// Esta funcion nos sirve para una gestion sobre los doctores
+// Gestiondoctores({ id_doctor: 1,
+//                   nombre: "María García",
+//                   especialidad: "Odontología"})
